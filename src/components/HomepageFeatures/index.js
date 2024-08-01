@@ -23,8 +23,8 @@ const FeatureList = [
         created, get price alerts for any token on Near, Near.Social notifications, alerts
         when someone donates to a Potlock project, when any smart contract emits a custom
         event, get a list of token holders, and much more - possible only with our
-        new <Link to="https://t.me/Intear_Xeon_bot">Xeon Bot</Link>. It's [partially open
-        source](https://github.com/INTEARnear/Tear), by the way.
+        new <Link to="https://t.me/Intear_Xeon_bot">Xeon Bot</Link>. It's <Link to="https://github.com/INTEARnear/Tear">partially
+        open-source</Link>, by the way.
       </>
     ),
   },
