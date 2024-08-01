@@ -88,7 +88,7 @@ const config = {
             items: [
               {
                 label: 'Events API',
-                to: '/docs/intro',
+                to: '/docs/events-api',
               },
             ],
           },
