@@ -38,11 +38,20 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Token Indexer',
+    description: (
+      <>
+        Fetch token prices, metadata, total / circulating supply, reputation, and more:
+        Check <Link to="/docs/token-indexer">Token Indexer docs</Link> for more details.
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description }) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
