@@ -85,9 +85,9 @@ To get the full data of these tokens, use the following methods:
 
 To search for tokens by name, symbol, ID, slugs, or even socials, use the following method:
 
-- `https://prices.intear.tech/token-search?q=intear&n=5&rep=NotFake`
+- `https://prices.intear.tech/token-search?q=intear&n=5&rep=NotFake&acc=slimedragon.near`
 
-Here, `q` is the query, `n` is the number of results to return, and `rep` is the minimum reputation required.
+Here, `q` is the query, `n` is the number of results to return, `rep` is the minimum reputation required, and `acc` is the user account.
 
 `q` is a required parameter, while `n` and `rep` are optional, and default to `5` and `Unknown` respectively.
 
@@ -97,6 +97,7 @@ The tokens are sorted based on:
   of these, or a substring.
 - Reputation. Tokens with higher reputation have the internal "score" boosted by a lot.
 - Market Cap. Tokens with higher market cap have the internal "score" boosted by a bit.
+- Owned tokens. Tokens owned by the user account have the internal "score" boosted by 20% if the user owned this token at least once, or 30% if the user currently owns this token (amount doesn't matter).
 
 The full ranking code can be found [on GitHub](https://github.com/INTEARnear/price-indexer/tree/main/src/token.rs)
 in `sorting_score` method.
