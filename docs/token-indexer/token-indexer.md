@@ -89,7 +89,7 @@ To search for tokens by name, symbol, ID, slugs, or even socials, use the follow
 
 Here, `q` is the query, `n` is the number of results to return, `rep` is the minimum reputation required, and `acc` is the user account.
 
-`q` is a required parameter, while `n` and `rep` are optional, and default to `5` and `Unknown` respectively.
+`q` is a required parameter, while `n`, `rep`, and `acc` are optional, `n` defaults to `5` and `rep` defaults to `Unknown`.
 
 The tokens are sorted based on:
 
