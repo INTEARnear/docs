@@ -43,6 +43,10 @@ and `{"contract_id":"shitzu.bodega-lab.near"}`. **All fields in the filter are o
 a valid filter message. After sending the filter, you will receive JSON events that match the filter.
 Each message is a JSON object of the event itself and no other fields.
 
+Examples:f
+- NFT mints: [GitHub](https://github.com/INTEARnear/nft-mints), [demo](https://nft-demo.intear.tech/)
+- Trades: [GitHub](https://github.com/INTEARnear/trades-demo), [demo](https://trades-demo.intear.tech/?account=aldor.near)
+
 ### NFT Events
 
 Indexed by [`nft-indexer`](https://github.com/INTEARnear/nft-indexer).
@@ -286,7 +290,7 @@ Indexed by [`new-token-indexer`](https://github.com/INTEARnear/new-token-indexer
 
 Supported on mainnet: `true`
 
-Supported on testnet: `false`
+Supported on testnet: `true`
 
 Filter example:
 
@@ -320,7 +324,7 @@ only creates a new token if the meme has reached the necessary market cap by the
 end of the auction, so there is no `newtoken_nep141` event for it at the time
 of creation. That's why we have a separate event for it.
 
-Supported on mainnet: `false`
+Supported on mainnet: `true`
 
 Supported on testnet: `true`
 
@@ -357,6 +361,40 @@ Event example:
 }
 ```
 
+#### `newtoken_memecooking_token`
+
+Meme.cooking does not create a NEP-141 contract when a new meme is created, it
+only creates a new token if the meme has reached the necessary market cap by the
+end of the auction, so this event is fired when a new token is actually launched.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "meme_id": 69,
+  "token_id": "69-slime.meme-cooking.near"
+}
+```
+
+Event example:
+
+```json
+{
+    "block_height": 130932105,
+    "block_timestamp_nanosec": "1729594976497692000",
+    "meme_id": 280,
+    "pool_id": 5535,
+    "receipt_id": "A2KLFyh2uqcADGUCBDh5sijQsNhdjmQfeyqpRgeT4VpM",
+    "token_id": "punk-280.meme-cooking.near",
+    "total_supply": "1000000000000000000000000000",
+    "transaction_id": "DQ1wPP3EDijmziwh2yEAR8x4Wg4zdsGJiGTGpzxTqynn"
+}
+```
+
 ### Price
 
 Emitted by [`price-indexer`](https://github.com/INTEARnear/price-indexer).
@@ -369,7 +407,7 @@ tokens are not supported.
 
 Supported on mainnet: `true`
 
-Supported on testnet: `false`
+Supported on testnet: `true`
 
 Filter example:
 
@@ -504,7 +542,7 @@ Fired for each pool a trade goes through. For example, if someone exchanges `USD
 
 Supported on mainnet: `true`
 
-Supported on testnet: `false`
+Supported on testnet: `true`
 
 Filter example:
 
@@ -538,7 +576,7 @@ Fired when a DEX pool changes. For example, when someone exchanges tokens, adds 
 
 Supported on mainnet: `true`
 
-Supported on testnet: `false`
+Supported on testnet: `true`
 
 Filter example:
 
@@ -558,7 +596,7 @@ Event example:
         "Ref": {
             "SimplePool": {
                 "amounts": [
-                    "https://github.com/INTEARnear/log-indexer3763291308863591537433666722",
+                    "3763291308863591537433666722",
                     "16720985987503673017748084113"
                 ],
                 "exchange_fee": 0,
@@ -634,6 +672,71 @@ Event example:
     "transaction_id": "9nAj55jhDmcmB2oCn7gbSZKiztTRYsPvR1s2fz84Xxu9"
 }
 ```
+
+#### `memecooking_deposit`
+
+Fired when a user deposits to a meme.cooking meme.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "meme_id": 69,
+  "trader_account_id": "slimedragon.near"
+}
+```
+
+Event example:
+
+```json
+{
+    "amount": "3980000000000000000000000",
+    "block_height": 130960744,
+    "block_timestamp_nanosec": "1729627909712710000",
+    "meme_id": 275,
+    "protocol_fee": "20000000000000000000000",
+    "receipt_id": "FXdoezynrfNEDQSb8kExZacgBBkCWAJcBn54uRN9n92h",
+    "referrer": null,
+    "referrer_fee": null,
+    "trader": "racso_alreves.tg",
+    "transaction_id": "2ZPqnbncuAQXSz4AZ12mj4pSGGwx2JuqLTg9CKTYVDkw"
+}
+```
+
+#### `memecooking_withdraw`
+
+Fired when a user withdraws from a meme.cooking meme.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "meme_id": 69,
+  "trader_account_id": "slimedragon.near"
+}
+
+Event example:
+
+```json
+{
+    "amount": "3900400000000000000000000",
+    "block_height": 130991669,
+    "block_timestamp_nanosec": "1729663111945244000",
+    "fee": "79600000000000000000000",
+    "meme_id": 279,
+    "receipt_id": "F2Ks8qxXecjnwGRhvc4VoVCQcetRuMCyJXZ4UdCUkdH",
+    "trader": "i5329236263.tg",
+    "transaction_id": "Hkqa48zbryqo2FUQazsDKc8uQ8JnwCxh6pTkxpnjpL5h"
+}
+````
 
 ### Contract Logs
 
@@ -714,5 +817,243 @@ Event example:
     "predecessor_id": "earn.kaiching",
     "receipt_id": "4YzHBiNwiV1UicGZt6w7fNuW8UipbEzqu1MR1eT4u7aF",
     "transaction_id": "EfwjuU9m8Phrx77gNM7AJaR3wHsKk1zpLxi9DmtBGjxT"
+}
+```
+
+### Block
+
+Indexed by [`tps-indexer`](https://github.com/INTEARnear/tps-indexer).
+
+#### `block_info`
+
+Fired when a new block is produced.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "block_height_equal": 121767590
+}
+```
+
+or
+
+```json
+{
+  "block_height_until": 121767600
+}
+
+Event example:
+
+```json
+{
+  "block_hash": "Fp1D9S2AawZdUh3BkkHhBiDHNyXSGyZ93TgWc4oUmVU7",
+  "block_height": 130992428,
+  "block_producer": "coinpayu.poolv1.near",
+  "block_timestamp_nanosec": "1729663979963111218",
+  "receipt_count": 224,
+  "transaction_count": 64
+}
+```
+
+### Transactions
+
+Indexed by [`tx-indexer`](https://github.com/INTEARnear/tx-indexer).
+
+#### `tx_transaction`
+
+Fired when a new transaction is executed (but before receipts are executed).
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "signer_id": "slimedragon.near",
+  "receiver_id": "v2.ref-finance.near",
+  "transaction_id": "EfwjuU9m8Phrx77gNM7AJaR3wHsKk1zpLxi9DmtBGjxT"
+}
+
+> **Note:** The `transaction_id` field can be used to listen to a transaction that has been produced or sent, but not yet finalized. Though using RPC is usually better for this use case.
+
+Event example:
+
+```json
+{
+  "actions": [
+    {
+      "FunctionCall": {
+        "args": "eyJjaGFyZ2VfZ2FzX2ZlZSI6ZmFsc2UsInNpZ25hdHVyZSI6IjQ0YjI3NDkyNjE2YmJmODc0MjVkYjE0MWZkNzM0NmYwNGM2YzU5ZTJlMzExNjY2OTdkZjQ3MWRlZjliNjA0ZTgiLCJtaW5pbmdfdGltZSI6IjQwMDExIiwibWF4X3RzIjoiMTcyOTY2NDE2ODE4NjQ5NDk3NiJ9",
+        "deposit": "0",
+        "gas": 30000000000000,
+        "method_name": "l2_claim"
+      }
+    }
+  ],
+  "block_height": 130992600,
+  "block_timestamp_nanosec": "1729664174082880068",
+  "nonce": 113680051006750,
+  "priority_fee": null,
+  "public_key": "ed25519:4QDtPgs6v7xTAgc4xY7taCTVhCViwMrnhTp8JGqLsCw8",
+  "receiver_id": "game.hot.tg",
+  "signature": "ed25519:RatoEFyJq83u4ZQmgxhGq8TjQ9cqPSYB8DCkC2PQ1brEhCjDcV7z9ne9xifGUwUcf4r3rVMeHcmAhCsrfuXDyNh",
+  "signer_id": "johboo.tg",
+  "transaction_id": "4x9TQikPYUPBcodmcoo76oPJYfaqrY22vB1JhwwzPq18"
+}
+```
+
+#### `tx_receipt`
+
+Fired when a receipt is executed.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "executor_id": "v2.ref-finance.near"
+}
+```
+
+Event example:
+
+```json
+{
+  "block_height": 130992681,
+  "block_timestamp_nanosec": "1729664264556526808",
+  "executor_id": "7497091143.tg",
+  "receipt_id": "6sva2DLMvXCybL1uuVBEa4iPK3taMJipmNSzE3KnUsL7",
+  "success": true,
+  "transaction_id": "Wf5uk1oPDxvQkSJdvA72cxCC6dLVBzNia5BurH48tPN"
+}
+```
+
+### Fungible Tokens
+
+Indexed by [`ft-indexer`](https://github.com/INTEARnear/ft-indexer).
+
+#### `ft_transfer`
+
+Fired when a fungible token is transferred.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "token_id": "intel.tkn.near",
+  "old_owner_id": "slimedragon.near",
+  "new_owner_id": "slimedrgn.tg",
+  "involved_account_ids": ["slimedragon.near", "slimedrgn.tg"],
+  "amount": "1000000000000000000000000",
+  "min_amount": "500000000000000000000000"
+}
+```
+
+> **Note:** The `involved_account_ids` field is a list of accounts that are involved in the transfer
+> and can be either the old or new owner. The exact filtering logic is
+> ```rs
+> if let Some(involved_account_ids) = &self.involved_account_ids {
+>     if !involved_account_ids.contains(&event.old_owner_id)
+>         && !involved_account_ids.contains(&event.new_owner_id)
+>     {
+>          return false;
+>     }
+> }
+> ```
+
+Event example:
+
+```json
+{
+  "amount": "110",
+  "block_height": 130993122,
+  "block_timestamp_nanosec": "1729664754464788698",
+  "memo": "sws:d3f6cb74a1c6fb794a706edad864e902d4a2433f90911de0046635d031f8078a,T-1938c-tnd4r-2024-10-23",
+  "new_owner_id": "mmfqhthz4e63.users.kaiching",
+  "old_owner_id": "earn.kaiching",
+  "receipt_id": "DfxjnRdxekNzN7Fqc2bzZQKtuqFTnj7Z54Wo8HBwxvQv",
+  "token_id": "wallet.kaiching",
+  "transaction_id": "2b9k8PqWQA3snqkf4Rv3re9KCaPgkw3EZdzmTgJ45tRt"
+}
+```
+
+#### `ft_mint`
+
+Fired when a fungible token is minted.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "owner_id": "slimedragon.near",
+  "token_id": "intel.tkn.near",
+  "amount": "1000000000000000000000000",
+  "min_amount": "500000000000000000000000"
+}
+```
+
+Event example:
+
+```json
+{
+  "amount": "562",
+  "block_height": 130993187,
+  "block_timestamp_nanosec": "1729664830685116312",
+  "memo": null,
+  "owner_id": "7356334727.tg",
+  "receipt_id": "G5EjTeRUcGi8SbvgjzkFG3yBPBnC3XUN7W5XzE1swrFs",
+  "token_id": "game.hot.tg",
+  "transaction_id": "6VDMrgY2D9yWjuHGt2ZMcJu1yPkexPNu1o6WCWEzEFmK"
+}
+```
+
+#### `ft_burn`
+
+Fired when a fungible token is burned.
+
+Supported on mainnet: `true`
+
+Supported on testnet: `true`
+
+Filter example:
+
+```json
+{
+  "owner_id": "slimedragon.near",
+  "token_id": "intel.tkn.near",
+  "amount": "1000000000000000000000000",
+  "min_amount": "500000000000000000000000"
+}
+
+Event example:
+
+```json
+{
+  "amount": "10000000",
+  "block_height": 130993371,
+  "block_timestamp_nanosec": "1729665038195026000",
+  "memo": null,
+  "owner_id": "pacpac73.near",
+  "receipt_id": "83SPUyms6DVvZmZGX9CdGHZNQL62Gsg9UBsyuANMmDDD",
+  "token_id": "aa-harvest-moon.near",
+  "transaction_id": "GKHTLLXfrJ31UeLK7Wh5YHvb17Q9ugovRWDrCcsREDTH"
 }
 ```
