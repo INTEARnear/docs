@@ -43,7 +43,7 @@ and `{"contract_id":"shitzu.bodega-lab.near"}`. **All fields in the filter are o
 a valid filter message. After sending the filter, you will receive JSON events that match the filter.
 Each message is a JSON object of the event itself and no other fields.
 
-Examples:f
+Examples:
 - NFT mints: [GitHub](https://github.com/INTEARnear/nft-mints), [demo](https://nft-demo.intear.tech/)
 - Trades: [GitHub](https://github.com/INTEARnear/trades-demo), [demo](https://trades-demo.intear.tech/?account=aldor.near)
 
