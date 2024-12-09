@@ -42,7 +42,7 @@ You can subscribe to realtime events from the WebSocket API by connecting to `ws
 
 You can't add custom events to the API right now, but it will be possible in the future with the release of Rainy.
 
-<WebSocketTester url="wss://ws-events-v3-experimental.intear.tech/events/tx_transaction" startingFilter={{"And":[{"path":"token_id","operator":{"Equals":"wrap.near"}}]}} text="Try filtering transactions />
+<WebSocketTester url="wss://ws-events-v3-experimental.intear.tech/events/tx_transaction" startingFilter={{"And":[{"path":"token_id","operator":{"Equals":"wrap.near"}}]}} text="Try filtering transactions" />
 
 ## Filter Structure
 
