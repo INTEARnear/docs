@@ -19,9 +19,10 @@ import 'prismjs/components/prism-json'
 interface WebSocketTesterProps {
   url: string;
   startingFilter: object;
+  text: string;
 }
 
-export default function WebSocketTester({ url, startingFilter }: WebSocketTesterProps) {
+export default function WebSocketTester({ url, startingFilter, text }: WebSocketTesterProps) {
   const [connected, setConnected] = useState(false)
   const [messages, setMessages] = useState<{ type: 'sent' | 'received' | 'error', content: string }[]>([])
   const [inputMessage, setInputMessage] = useState(JSON.stringify(startingFilter, null, 2))
@@ -138,7 +139,7 @@ export default function WebSocketTester({ url, startingFilter }: WebSocketTester
   }
 
   return (
-    <Card 
+    <Card
       className={`w-full max-w-2xl mx-auto border transition-colors
         bg-[var(--ifm-background-color)]
         border-[var(--ifm-color-emphasis-300)]
@@ -146,14 +147,14 @@ export default function WebSocketTester({ url, startingFilter }: WebSocketTester
         ${isCollapsed ? 'cursor-pointer hover:bg-[var(--ifm-hover-overlay)] pb-4' : ''}`}
       onClick={() => isCollapsed && setIsCollapsed(false)}
     >
-      <CardHeader 
+      <CardHeader
         className="flex flex-row items-center justify-between space-y-0 pb-2"
         onClick={(e) => {
           e.stopPropagation()
           setIsCollapsed(!isCollapsed)
         }}
       >
-        <CardTitle className="text-xl text-[var(--ifm-font-color-base)]">Try it out</CardTitle>
+        <CardTitle className="text-xl text-[var(--ifm-font-color-base)]">{text}</CardTitle>
         <Button
           variant="ghost"
           size="sm"
@@ -163,7 +164,7 @@ export default function WebSocketTester({ url, startingFilter }: WebSocketTester
         </Button>
       </CardHeader>
       {!isCollapsed && (
-        <CardContent 
+        <CardContent
           className="space-y-4"
           onClick={(e) => e.stopPropagation()}
         >
@@ -184,7 +185,7 @@ export default function WebSocketTester({ url, startingFilter }: WebSocketTester
               className={`text-white hover:text-white ${connected
                 ? 'bg-red-600 hover:bg-red-700'
                 : 'bg-[#2e8555] hover:bg-[#2b7b4f]'
-              }`}
+                }`}
             >
               {connected ? 'Disconnect' : 'Connect'}
             </Button>
