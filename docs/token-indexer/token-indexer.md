@@ -3,11 +3,9 @@ sidebar_position: 1
 title: Token Indexer
 ---
 
-> This documentation is not complete, it's a temporary thing before the full docs are written.
-
 # Token Indexer
 
-To test it interactively, use the [Swagger UI](https://prices.intear.tech/swagger-ui/).
+To try the API interactively, use the [Swagger UI](https://prices.intear.tech/swagger-ui/).
 
 All endpoints require no authorization and are behind a short-term Cloudflare Cache to reduce the load, so you may experience up to 5 seconds of delay when accessing data that updates frequently.
 
