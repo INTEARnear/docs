@@ -21,16 +21,16 @@ You can subscribe to realtime events from the WebSocket API by connecting to `ws
 - `liquidity_pool`
 - `log_nep297`
 - `log_text`
-- `nep141`
-- `nep171`
+- `newtoken_nep141`
+- `newtoken_nep171`
 - `nft_burn`
 - `nft_mint`
 - `nft_transfer`
 - `potlock_donation`
 - `potlock_pot_donation`
 - `potlock_pot_project_donation`
-- `price_pool`
-- `price_token`
+- `price_pool` (not working in v3 yet)
+- `price_token` (not working in v3 yet)
 - `socialdb_index`
 - `trade_pool`
 - `trade_pool_change`
@@ -149,6 +149,12 @@ Checks if an object has the specified key. Requires the target field to be an ob
         "operator": {
             "Equals": "token.0xshitzu.near"
         }
+    },
+    {
+        "path": "account_id",
+        "operator": {
+            "Equals": "token-locker.ref-labs.near"
+        }
     }
   ]
 }
@@ -162,6 +168,20 @@ Checks if an object has the specified key. Requires the target field to be an ob
         "path": "tokens",
         "operator": {
             "HasKey": "token.0xshitzu.near"
+        }
+    }
+  ]
+}
+```
+
+### Transfers of tokens on meme.cooking (`ft_transfer`, but can also be implemented with `log_nep297` with standard `nep141`)
+```json
+{
+  "And": [
+    {
+        "path": "token_id",
+        "operator": {
+            "EndsWith": ".meme-cooking.near"
         }
     }
   ]
@@ -183,3 +203,4 @@ Checks if an object has the specified key. Requires the target field to be an ob
 4. When using logical operators (`And`/`Or`), you would usually want to set the path to "." and provide an array of sub-filters
 5. Array indices are zero-based
 6. The filter is evaluated against each event before it is sent to the client
+7. The messages contain an array of events, not just one event. The events are grouped by block.
