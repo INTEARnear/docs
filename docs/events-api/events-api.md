@@ -204,3 +204,9 @@ Checks if an object has the specified key. Requires the target field to be an ob
 5. Array indices are zero-based
 6. The filter is evaluated against each event before it is sent to the client
 7. The messages contain an array of events, not just one event. The events are grouped by block.
+
+## The old (v2) Events API
+
+Different filters (they're hardcoded), not grouped by block, different endpoint.
+
+<WebSocketTester url="wss://ws-events.intear.tech/events/price_token" startingFilter={{"token":"wrap.near"}} text="Token price changes" />
