@@ -13,30 +13,29 @@ You can subscribe to realtime events from the WebSocket API by connecting to `ws
 
 ## Event Names
 
-- `aurora_transaction`
-- `block_info`
-- `ft_burn`
-- `ft_mint`
-- `ft_transfer`
-- `liquidity_pool`
-- `log_nep297`
-- `log_text`
-- `newtoken_nep141`
-- `newtoken_nep171`
-- `nft_burn`
-- `nft_mint`
-- `nft_transfer`
-- `potlock_donation`
-- `potlock_pot_donation`
-- `potlock_pot_project_donation`
-- `price_pool` (not working in v3 yet)
-- `price_token` (not working in v3 yet)
-- `socialdb_index`
-- `trade_pool`
-- `trade_pool_change`
-- `trade_swap`
-- `tx_receipt`
-- `tx_transaction`
+- `aurora_transaction` - a transaction on Aurora caused by an Aurora account (doesn't index cross-chain transactions from NEAR yet)
+- `block_info` - Some information about each block
+- `ft_burn` - A token was burned
+- `ft_mint` - A token was minted
+- `ft_transfer` - A token was transferred
+- `liquidity_pool` - Liquidity was added or removed from a pool
+- `log_nep297` - A NEP-297 event (`EVENT_JSON:{...}`)
+- `log_text` - A raw text log event
+- `newtoken_nep141` - A new NEP-141 (FT) token was created
+- `newtoken_nep171` - A new NEP-171 (NFT) token was created
+- `nft_burn` - An NFT was burned
+- `nft_mint` - An NFT was minted
+- `nft_transfer` - An NFT was transferred
+- `potlock_donation` - A donation was made to a project
+- `potlock_pot_donation` - A donation was made to a pot
+- `potlock_pot_project_donation` - A donation was made to a potlock project in a pot
+- `price_token` - A token price changed (not working in v3 yet, scroll down to see the old v2 API for this)
+- `socialdb_index` - Something happened on SocialDB (notifications, etc.)
+- `trade_pool` - For each trade in a pool. For example, if the trade is USDC -> USDT -> NEAR, there will be 2 events for both `->` arrows
+- `trade_pool_change` - A pool has changed. Maybe liquidity was added or removed, or a trade was made that changed liquidity ratio, or something else. Also fired when a pool is created.
+- `trade_swap` - For each *real* swap. For example, if the trade is USDC -> USDT -> NEAR, there will be 1 event with balance changes for USDC and NEAR.
+- `tx_receipt` - A receipt
+- `tx_transaction` - A transaction
 
 ## Custom Events
 
@@ -160,9 +159,7 @@ Checks if an object has the specified key. Requires the target field to be an ob
 }
 ```
 
-### Filter for when Shitzu is added or removed from a liquidity pool (`liquidity_pool`)
-```json
-{
+### Filter for when STry with NEP-297 events
   "And": [
     {
         "path": "tokens",
