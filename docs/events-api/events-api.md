@@ -159,7 +159,9 @@ Checks if an object has the specified key. Requires the target field to be an ob
 }
 ```
 
-### Filter for when STry with NEP-297 events
+### Filter for when Shitzu is added or removed from a liquidity pool (`liquidity_pool`)
+```json
+{
   "And": [
     {
         "path": "tokens",
