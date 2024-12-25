@@ -7,9 +7,9 @@ import WebSocketTester from '../../src/components/WebSocketTester'
 
 # Realtime WebSocket Events API Documentation
 
-You can subscribe to realtime events from the WebSocket API by connecting to `wss://ws-events-v3-experimental.intear.tech/events/<event_name>` and sending a filter object.
+You can subscribe to realtime events from the WebSocket API by connecting to `wss://ws-events-v3.intear.tech/events/<event_name>` and sending a filter object.
 
-<WebSocketTester url="wss://ws-events-v3-experimental.intear.tech/events/ft_transfer" startingFilter={{"And":[{"path":"token_id","operator":{"Equals":"wrap.near"}}]}} text="Try it out!" />
+<WebSocketTester url="wss://ws-events-v3.intear.tech/events/ft_transfer" startingFilter={{"And":[{"path":"token_id","operator":{"Equals":"wrap.near"}}]}} text="Try it out!" />
 
 ## Event Names
 
@@ -41,7 +41,7 @@ You can subscribe to realtime events from the WebSocket API by connecting to `ws
 
 You can't add custom events to the API right now, but it will be possible in the future with the release of Rainy.
 
-<WebSocketTester url="wss://ws-events-v3-experimental.intear.tech/events/tx_transaction" startingFilter={{"And":[{"path":"receiver_id","operator":{"Equals":"v2.ref-finance.near"}}]}} text="Try filtering transactions" />
+<WebSocketTester url="wss://ws-events-v3.intear.tech/events/tx_transaction" startingFilter={{"And":[{"path":"receiver_id","operator":{"Equals":"v2.ref-finance.near"}}]}} text="Try filtering transactions" />
 
 ## Filter Structure
 
@@ -192,7 +192,7 @@ Checks if an object has the specified key. Requires the target field to be an ob
 {"And": []}
 ```
 
-<WebSocketTester url="wss://ws-events-v3-experimental.intear.tech/events/log_nep297" startingFilter={{"And":[]}} text="Try with NEP-297 events" />
+<WebSocketTester url="wss://ws-events-v3.intear.tech/events/log_nep297" startingFilter={{"And":[]}} text="Try with NEP-297 events" />
 
 ## Usage Notes
 
@@ -208,4 +208,4 @@ Checks if an object has the specified key. Requires the target field to be an ob
 
 Different filters (they're hardcoded), not grouped by block, different endpoint.
 
-<WebSocketTester url="wss://ws-events.intear.tech/events/price_token" startingFilter={{"token":"wrap.near"}} text="Token price changes" />
+<WebSocketTester url="wss://ws-events.intear.tech/events/log_nep297" startingFilter={{"version_match":"^1.0.0", "standard":"nep141"}} text="Logs" />
