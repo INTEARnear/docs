@@ -29,7 +29,7 @@ You can subscribe to realtime events from the WebSocket API by connecting to `ws
 - `potlock_donation` - A donation was made to a project
 - `potlock_pot_donation` - A donation was made to a pot
 - `potlock_pot_project_donation` - A donation was made to a potlock project in a pot
-- `price_token` - A token price changed (not working in v3 yet, scroll down to see the old v2 API for this)
+- `price_token` - A token price changed
 - `socialdb_index` - Something happened on SocialDB (notifications, etc.)
 - `trade_pool` - For each trade in a pool. For example, if the trade is USDC -> USDT -> NEAR, there will be 2 events for both `->` arrows
 - `trade_pool_change` - A pool has changed. Maybe liquidity was added or removed, or a trade was made that changed liquidity ratio, or something else. Also fired when a pool is created.
