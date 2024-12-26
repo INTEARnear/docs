@@ -80,6 +80,12 @@ const config = {
             label: 'Token Indexer',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'oracle',
+            position: 'left',
+            label: 'Oracle',
+          },
+          {
             href: 'https://github.com/INTEARnear/docs',
             label: 'GitHub',
             position: 'right',
@@ -99,6 +105,10 @@ const config = {
               {
                 label: 'Token Indexer',
                 to: '/docs/token-indexer',
+              },
+              {
+                label: 'Oracle',
+                to: '/docs/oracle',
               },
             ],
           },

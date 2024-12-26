@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
@@ -15,16 +14,16 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Xeon Bot',
+    title: 'Bettear Bot',
     description: (
       <>
         Set up a buybot in your group or DM, check balance and NEAR staking of an account,
         set up NFT trade / mint / burn alerts, alerts when a new token or LP pool is
         created, get price alerts for any token on Near, Near.Social notifications, alerts
         when someone donates to a Potlock project, when any smart contract emits a custom
-        event, get a list of token holders, and much more - possible only with our
-        new <Link to="https://t.me/Intear_Xeon_bot">Xeon Bot</Link>. It's <Link to="https://github.com/INTEARnear/Tear">partially
-        open-source</Link>, by the way.
+        event, get a list of token holders, trade, snipe, use trigger orders, copytrade, bridge,
+        and much more - possible only with our new <Link to="https://t.me/BettearBot">Bettear Bot</Link>.
+        It's <Link to="https://github.com/INTEARnear/Tear">partially open-source</Link>, by the way.
       </>
     ),
   },
@@ -47,12 +46,32 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Oracle',
+    description: (
+      <>
+        A fully decentralized oracle marketplace hosted as a smart contract on NEAR, that
+        utilizes yield / resume host functions to provide the best developer experience.
+        Check <Link to="/docs/oracle">Oracle docs</Link> for API reference and examples.
+      </>
+    ),
+  },
+  {
+    title: 'AI Moderator',
+    description: (
+      <>
+        Moderate your Telegram groups easily with our AI Moderator bot. Set up your own
+        rules (prompt), punishments, number of messages to check before user becomes trusted.
+        Check out our <Link to="https://telegra.ph/AI-Moderator-09-09">guide</Link>!
+      </>
+    ),
+  },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ title, description }) {
   return (
-    <div className={clsx('col col--3')}>
-      <div className="text--center padding-horiz--md">
+    <div className={'col col--4'}>
+      <div className="text--center padding-horiz--md mt-8">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
