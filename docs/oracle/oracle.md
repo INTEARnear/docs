@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Oracle
+title: Oracle Marketplace
 ---
 
 # Oracle
