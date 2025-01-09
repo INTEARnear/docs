@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Events API
+title: Realtime Events API
 ---
 
 import WebSocketTester from '../../src/components/WebSocketTester'
