@@ -60,7 +60,7 @@ This API server is public and free to use, but we recommend self-hosting [intear
 - `https://events-v3.intear.tech/v3/newtoken_nep141/count`
 - `https://events-v3.intear.tech/v3/price_token/latest_price?token=wrap.near`. Note: the price is for 1 yocto, in USDt, so to get the price of 1 NEAR, you need to multiply it by 1e24 (24 is decimals of NEAR) and divide by 1e6 (6 is decimals of USDt)
 - `https://events-v3.intear.tech/v3/price_token/price_at_time?token=wrap.near&timestamp_nanosec=1736390058471470000`. Same note as above.
-- `http://localhost:8080/v3/price_token/ohlc?token=wrap.near&resolution=1&count_back=100&to=1736384340000`. Note: Example TradingView implementation: https://github.com/INTEARnear/chart-tradingview
+- `https://events-v3.intear.tech/v3/price_token/ohlc?token=wrap.near&resolution=1&count_back=100&to=1736384340000`. Note: Example TradingView implementation: https://github.com/INTEARnear/chart-tradingview
 - `https://events-v3.intear.tech/v3/tx_receipt/accounts_by_prefix?prefix=slime`
 - `https://events-v3.intear.tech/v3/tx_receipt/accounts_by_suffix?suffix=.intear.near`
 - `https://events-v3.intear.tech/v3/tx_receipt/accounts_count`
@@ -73,6 +73,12 @@ This API server is public and free to use, but we recommend self-hosting [intear
 - `https://events-v3.intear.tech/v3/tx_transaction/by_signer_oldest?signer_id=slimedragon.near`
 - `https://events-v3.intear.tech/v3/tx_transaction/by_receiver_newest?receiver_id=v2.ref-finance.near`
 - `https://events-v3.intear.tech/v3/tx_transaction/by_receiver_oldest?receiver_id=v2.ref-finance.near`
+- `https://events-v3.intear.tech/v3/trade_swap/volume_1h?token_id=wrap.near`
+- `https://events-v3.intear.tech/v3/trade_swap/volume_24h?token_id=wrap.near`
+- `https://events-v3.intear.tech/v3/trade_swap/volume_7d?token_id=wrap.near`
+- `https://events-v3.intear.tech/v3/trade_swap/volume_usd_1h?token_id=wrap.near`
+- `https://events-v3.intear.tech/v3/trade_swap/volume_usd_24h?token_id=wrap.near`
+- `https://events-v3.intear.tech/v3/trade_swap/volume_usd_7d?token_id=wrap.near`
 
 All these endpoints are configured in [`intear-events/events/*.json`](https://github.com/INTEARnear/intear-events/tree/main/events) files, and are indexed in [`all-inexers`](https://github.com/inTEARnear/all-indexers) repo, so you can easily add your own endpoints or self-host the API, as long as you have Redis and Postgres running.
 
