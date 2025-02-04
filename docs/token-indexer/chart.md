@@ -15,5 +15,7 @@ Here's what it looks like:
 
 <br/>
 
-> Note: Real-time updates don't work properly yet, this will be fixed in the coming days / weeks. If you
+> Note: Real-time updates don't work properly yet, this will be fixed in the coming weeks / months. If you
 > feel more comfortable copying the code into your application, check out the [GitHub repository](https://github.com/INTEARnear/chart-tradingview) for chart.intear.tech.
+
+Testnet chart URL: `https://chart-testnet.intear.tech/?token=wrap.testnet`

@@ -9,6 +9,8 @@ To try the API interactively, use the [Swagger UI](https://prices.intear.tech/sw
 
 All endpoints require no authorization and are behind a short-term Cloudflare Cache to reduce the load, so you may experience up to 5 seconds of delay when accessing data that updates frequently.
 
+To use it on testnet, replace the domain with `prices-testnet.intear.tech`, prices are bound to `usdtt.fakes.testnet`.
+
 ## Token Price
 
 ### Ref.finance Compatibility

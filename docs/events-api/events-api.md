@@ -9,6 +9,8 @@ import WebSocketTester from '../../src/components/WebSocketTester'
 
 You can subscribe to realtime events from the WebSocket API by connecting to `wss://ws-events-v3.intear.tech/events/<event_name>` and sending a filter object.
 
+For testnet, use `wss://ws-events-v3-testnet.intear.tech/events/<event_name>`. Potlock and SocialDB events are not available on testnet.
+
 <WebSocketTester url="wss://ws-events-v3.intear.tech/events/ft_transfer" startingFilter={{"And":[{"path":"token_id","operator":{"Equals":"wrap.near"}}]}} text="Try it out!" />
 
 ## Event Names

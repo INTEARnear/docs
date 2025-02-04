@@ -35,6 +35,8 @@ Example response:
 
 > Note 2: Our database has not been fully backfilled yet, so some older data may not be available.
 
+For testnet, use `https://events-v3-testnet.intear.tech/v3/trade_swap/by_trader_newest?trader=slimeeeeeeeee.testnet`.
+
 ## Public API
 
 This API server is public and free to use, but we recommend self-hosting [intear-events](https://github.com/INTEARnear/intear-events) or developing your own [inevents](https://github.com/INTEARnear/ienvents) server if you need more flexibility (custom events, higher rate limits, etc.), as well as reliability.

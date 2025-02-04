@@ -18,3 +18,5 @@ Install [@intear/inevents-websocket-client](https://www.npmjs.com/package/@intea
 Example usage: [here](https://github.com/INTEARnear/oracle/blob/7dfbcee2021ed11f306b6d38d1fb56789f80a175/crates/dashboard-frontend/api/oracles.ts#L61-L128)
 
 The SDK doesn't include types for the events, as in the future you'll be able to create your own events, but includes types for filtering.
+
+To use the SDKs with testnet, you need to specify the testnet API URL.
