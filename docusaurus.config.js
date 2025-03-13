@@ -86,6 +86,12 @@ const config = {
             label: 'Oracle',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'ai',
+            position: 'left',
+            label: 'AI',
+          },
+          {
             href: 'https://github.com/INTEARnear/docs',
             label: 'GitHub',
             position: 'right',
@@ -110,6 +116,10 @@ const config = {
                 label: 'Oracle',
                 to: '/docs/oracle',
               },
+              {
+                label: 'AI',
+                to: '/docs/ai',
+              }
             ],
           },
           {
