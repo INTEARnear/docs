@@ -63,11 +63,11 @@ env.add_reply("""
                   [{"Url":{"text":"Claim free 1 NEAR","url":"https://youtube.com/watch?v=dQw4w9WgXcQ"}}]
                 ]
               }
-              """, message_type = "buttons")
+              """, message_type = "system:buttons")
 env.add_reply("Welcome!")
 ```
 
-You should add a reply with message_type = "buttons" *before* the message itself.
+You should add a reply with message_type = "system:buttons" *before* the message itself.
 
 How it looks:
 
@@ -75,7 +75,7 @@ How it looks:
 
 ## 3. Run Status
 
-If the run takes long time to process, you can send multiple messages to inform the user about the status. But even better is to add "ephemeral" messages that edit previous progress messages, and are removed when the agent is done. To do this, you can use `env.add_reply` with `message_type = "status"`:
+If the run takes long time to process, you can send multiple messages to inform the user about the status. But even better is to add "ephemeral" messages that edit previous progress messages, and are removed when the agent is done. To do this, you can use `env.add_reply` with `message_type = "system:status"`:
 
 ```python
 env.add_reply("Welcome!")
@@ -85,14 +85,14 @@ env.add_reply("""
                 "message": "Loading...",
                 "progress": 0.5
               }
-              """, message_type = "status")
+              """, message_type = "system:status")
 time.sleep(1)
 env.add_reply("""
               {
                 "message": "Almost done...",
                 "progress": 0.8
               }
-              """, message_type = "status")
+              """, message_type = "system:status")
 time.sleep(1)
 env.add_reply("Done")
 ```
