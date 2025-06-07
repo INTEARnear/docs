@@ -38,6 +38,16 @@ const FeatureList = [
     ),
   },
   {
+    title: 'DEX Aggregator',
+    description: (
+      <>
+        Access our <Link to="/docs/dex-aggregator">DEX Aggregator</Link> for optimal
+        trading routes across multiple decentralized exchanges on NEAR blockchain,
+        ensuring best prices and minimal slippage.
+      </>
+    ),
+  },
+  {
     title: 'Token Indexer',
     description: (
       <>

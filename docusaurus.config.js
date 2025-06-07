@@ -75,6 +75,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'dexAggregatorSidebar',
+            position: 'left',
+            label: 'DEX Aggregator',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'tokenIndexer',
             position: 'left',
             label: 'Token Indexer',
@@ -109,6 +115,10 @@ const config = {
                 to: '/docs/events-api',
               },
               {
+                label: 'DEX Aggregator',
+                to: '/docs/dex-aggregator',
+              },
+              {
                 label: 'Token Indexer',
                 to: '/docs/token-indexer',
               },
@@ -131,7 +141,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://x.com/intelnear',
+                href: 'https://x.com/intea_rs',
               },
             ],
           },
