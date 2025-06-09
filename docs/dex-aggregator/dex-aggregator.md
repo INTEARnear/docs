@@ -29,7 +29,7 @@ The aggregator currently integrates with the following decentralized exchanges:
 Get the best route for a token swap:
 
 ```
-GET https://router.intear.tech/route?token_in=near&token_out=usdc.tether-token.near&amount_in=1000000000000000000000000&max_wait_ms=1500&slippage_type=Auto&max_slippage=0.1&min_slippage=0.001&dexes=Rhea,NearIntents,Aidols&trader_account_id=user.near
+GET https://router.intear.tech/route?token_in=17208628f84f5d6ad33f0da3bbbeb27ffcb398eac501a31bd6ad2011e36133a1&token_out=near&amount_out=2000000000000000000000000&max_wait_ms=1500&slippage_type=Auto&max_slippage=0.1&min_slippage=0.001&dexes=Rhea%2CVeax%2CAidols%2CGraFun%2CJumpdefi%2CWrap%2CRheaDcl&trader_account_id=test.slimegirl.near&signing_public_key=ed25519%3A6asoE6aiJe2ebkgFpmsTmbTWcZFXamnBMu5vzRi8cRvQ
 ```
 
 **Parameters:**
