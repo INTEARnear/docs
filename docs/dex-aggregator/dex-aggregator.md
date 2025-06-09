@@ -1,4 +1,4 @@
----
+\---
 sidebar_position: 1
 title: DEX Aggregator
 ---
@@ -17,11 +17,10 @@ The aggregator currently integrates with the following decentralized exchanges:
 
 - **Rhea** - AMM DEX at [dex.rhea.finance](https://dex.rhea.finance/)
 - **NearIntents** - Guaranteed-quote DEX & Bridge at [app.near-intents.org](https://app.near-intents.org/)
-- **Veax** - AMM DEX at [app.veax.com](https://app.veax.com/) *(Not implemented yet)*
+- **Veax** - AMM DEX at [app.veax.com](https://app.veax.com/)
 - **Aidols** - Bonding-curve launchpad at [aidols.bot](https://aidols.bot/)
 - **GraFun** - Bonding-curve launchpad at [gra.fun](https://gra.fun/)
 - **Jumpdefi** - AMM DEX at [app.jumpdefi.xyz](https://app.jumpdefi.xyz/swap) *(Not implemented yet)*
-- **Wrap** - Direct NEAR ↔ wNEAR conversion
 
 ## Getting Routes
 
@@ -190,8 +189,9 @@ Uses a fixed slippage percentage (1% in this example).
 | DEX | Amount In | Amount Out | Special Notes |
 |-----|-----------|------------|---------------|
 | Rhea | ✅ | ❌ | AMM with slippage |
+| RheaDcl | ✅ | ✅ | AMM with slippage |
 | NearIntents | ✅ | ✅ | Guaranteed quotes, no slippage |
-| Veax | ❌ | ❌ | *Not implemented yet* |
+| Veax | ✅ | ✅ | AMM with slippage |
 | Aidols | ✅ | ✅ | Only `*.aidols.near` tokens |
 | GraFun | ✅ | ❌ | Only `*.gra-fun.near` tokens |
 | Jumpdefi | ❌ | ❌ | *Not implemented yet* |
