@@ -1,4 +1,4 @@
-\---
+---
 sidebar_position: 1
 title: DEX Aggregator
 ---
@@ -196,6 +196,8 @@ Uses a fixed slippage percentage (1% in this example).
 | GraFun | ✅ | ❌ | Only `*.gra-fun.near` tokens |
 | Jumpdefi | ❌ | ❌ | *Not implemented yet* |
 | Wrap | ✅ | ✅ | NEAR ↔ wNEAR only |
+| MetaPool | ✅ | ✅ | NEAR ↔ STNEAR only |
+| Linear | ✅ | ✅ | NEAR ↔ LiNEAR only |
 
 ## What is handled and what is not
 
