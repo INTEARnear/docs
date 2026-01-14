@@ -15,12 +15,11 @@ This service is currently not supported on testnet.
 
 The aggregator currently integrates with the following decentralized exchanges:
 
-- **Rhea** - AMM DEX at [dex.rhea.finance](https://dex.rhea.finance/)
+- **Rhea** & **RheaDcl** - AMM DEX at [dex.rhea.finance](https://dex.rhea.finance/)
 - **NearIntents** - Guaranteed-quote DEX & Bridge at [app.near-intents.org](https://app.near-intents.org/)
-- **Veax** - AMM DEX at [app.veax.com](https://app.veax.com/)
 - **Aidols** - Bonding-curve launchpad at [aidols.bot](https://aidols.bot/)
-- **GraFun** - Bonding-curve launchpad at [gra.fun](https://gra.fun/)
-- **Jumpdefi** - AMM DEX at [app.jumpdefi.xyz](https://app.jumpdefi.xyz/swap) *(Not implemented yet)*
+- **Wrap** - Wrap tokens directly, such as NEAR<>wNEAR, token<>rhea:token
+- **MetaPool**, **Linear**, **RNear** & **XRhea** - Liquid stake & unstake (if liquid unstake is supported by the protocol)
 
 ## Getting Routes
 
@@ -29,7 +28,7 @@ The aggregator currently integrates with the following decentralized exchanges:
 Get the best route for a token swap:
 
 ```
-GET https://router.intear.tech/route?token_in=17208628f84f5d6ad33f0da3bbbeb27ffcb398eac501a31bd6ad2011e36133a1&token_out=near&amount_out=2000000000000000000000000&max_wait_ms=1500&slippage_type=Auto&max_slippage=0.1&min_slippage=0.001&dexes=Rhea%2CVeax%2CAidols%2CGraFun%2CJumpdefi%2CWrap%2CRheaDcl&trader_account_id=test.slimegirl.near&signing_public_key=ed25519%3A6asoE6aiJe2ebkgFpmsTmbTWcZFXamnBMu5vzRi8cRvQ
+GET https://router.intear.tech/route?token_in=17208628f84f5d6ad33f0da3bbbeb27ffcb398eac501a31bd6ad2011e36133a1&token_out=near&amount_out=2000000000000000000000000&max_wait_ms=1500&slippage_type=Auto&max_slippage=0.1&min_slippage=0.001&dexes=Rhea,RheaDcl,Aidols&trader_account_id=test.slimegirl.near&signing_public_key=ed25519%3A6asoE6aiJe2ebkgFpmsTmbTWcZFXamnBMu5vzRi8cRvQ
 ```
 
 **Parameters:**
@@ -191,13 +190,12 @@ Uses a fixed slippage percentage (1% in this example).
 | Rhea | ✅ | ❌ | AMM with slippage |
 | RheaDcl | ✅ | ✅ | AMM with slippage |
 | NearIntents | ✅ | ✅ | Guaranteed quotes, no slippage |
-| Veax | ✅ | ✅ | AMM with slippage |
 | Aidols | ✅ | ✅ | Only `*.aidols.near` tokens |
-| GraFun | ✅ | ❌ | Only `*.gra-fun.near` tokens |
-| Jumpdefi | ❌ | ❌ | *Not implemented yet* |
 | Wrap | ✅ | ✅ | NEAR ↔ wNEAR only |
 | MetaPool | ✅ | ✅ | NEAR ↔ STNEAR only |
 | Linear | ✅ | ✅ | NEAR ↔ LiNEAR only |
+| XRhea | ✅ | ✅ | RHEA ↔ XRHEA only |
+| RNear | ✅ | ✅ | NEAR ↔ rNEAR only |
 
 ## What is handled and what is not
 
