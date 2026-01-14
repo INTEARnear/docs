@@ -18,7 +18,7 @@ The aggregator currently integrates with the following decentralized exchanges:
 - **Rhea** & **RheaDcl** - AMM DEX at [dex.rhea.finance](https://dex.rhea.finance/)
 - **NearIntents** - Guaranteed-quote DEX & Bridge at [app.near-intents.org](https://app.near-intents.org/)
 - **Aidols** - Bonding-curve launchpad at [aidols.bot](https://aidols.bot/)
-- **Wrap** - Wrap tokens directly, such as NEAR<>wNEAR, token<>rhea:token
+- **Wrap** - Wrap tokens directly, such as NEAR↔wNEAR, token↔rhea:token
 - **MetaPool**, **Linear**, **RNear** & **XRhea** - Liquid stake & unstake (if liquid unstake is supported by the protocol)
 
 ## Getting Routes
