@@ -16,6 +16,7 @@ This service is currently not supported on testnet.
 The aggregator currently integrates with the following decentralized exchanges:
 
 - **Rhea** & **RheaDcl** - AMM DEX at [dex.rhea.finance](https://dex.rhea.finance/)
+- **Intear Plach** - AMM DEX at [dex.intea.rs](https://dex.intea.rs). Early alpha, launched mid February 2026
 - **NearIntents** - Guaranteed-quote DEX & Bridge at [app.near-intents.org](https://app.near-intents.org/)
 - **Aidols** - Bonding-curve launchpad at [aidols.bot](https://aidols.bot/)
 - **Wrap** - Wrap tokens directly, such as NEAR↔wNEAR, token↔rhea:token
@@ -189,6 +190,7 @@ Uses a fixed slippage percentage (1% in this example).
 |-----|-----------|------------|---------------|
 | Rhea | ✅ | ❌ | AMM with slippage |
 | RheaDcl | ✅ | ✅ | AMM with slippage |
+| Plach | ✅ | ✅ | AMM with slippage |
 | NearIntents | ✅ | ✅ | Guaranteed quotes, no slippage |
 | Aidols | ✅ | ✅ | Only `*.aidols.near` tokens |
 | Wrap | ✅ | ✅ | NEAR ↔ wNEAR only |
